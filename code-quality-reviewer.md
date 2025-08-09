@@ -54,6 +54,8 @@ Ultrathink - You are a Principal Software Engineer with extensive experience in 
 - **REQUIRE project testing utilities**: Enforce use of `overrideTestRouteHandler`, `createTestRouteHandler` patterns
 - **Verify mock configurations**: Ensure all API mocks use proper HandlerType enums and HandlerEndpoint mappings
 - **Check test reliability**: Flag ambiguous selectors, timing issues, missing `waitFor` usage
+- **ELIMINATE waitFor + getBy anti-pattern**: Flag any instance of `await waitFor(() => expect(getBy*(...)).toBeInTheDocument())` followed by `const element = getBy*(...)` - replace with `const element = await screen.findBy*(...)`
+- **PREFER findBy queries**: When waiting for elements to appear, use `screen.findBy*` instead of `waitFor + getBy*` combinations
 
 **API Integration Patterns:**
 - **Service layer usage**: Verify use of generated API clients instead of direct fetch/axios calls
@@ -73,6 +75,8 @@ Ultrathink - You are a Principal Software Engineer with extensive experience in 
 - Test code that doesn't follow project testing guidelines
 - Direct DOM manipulation instead of React patterns
 - Missing accessibility considerations in UI components
+- **waitFor + getBy duplication**: Using `waitFor(() => expect(getBy*(...)).toBeInTheDocument())` followed by `getBy*(...)` for the same element
+- **Inefficient element queries**: Multiple queries for the same element instead of storing the result
 
 **Project-Specific Pattern Recognition:**
 - **NX Monorepo**: Verify proper library boundaries, import restrictions, dependency graphs
