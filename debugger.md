@@ -67,6 +67,7 @@ For each debugging session, provide:
    - Minimal, targeted fix addressing root cause
    - Explanation of why this fix resolves the issue
    - Any side effects or considerations
+   - **CRITICAL**: Verify ALL tests pass after implementing fix using `yarn nx test <project-name> --run`
 
 4. **Prevention Strategy**:
    - How to avoid this issue in the future
