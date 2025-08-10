@@ -71,6 +71,7 @@ Execute the implementation plan methodically with continuous reasoning:
 - Add appropriate error handling and logging with thoughtful consideration
 - Integrate with existing systems carefully
 - Ensure code follows project patterns and conventions
+- **Factory Method Optimization**: Before quality checks, search for and replace verbose factory instantiation with convenience methods (e.g., `Factory.upcoming()` vs `Factory.build({ status: Status.Upcoming })`)
 - Delegate to `iterative-quality-fixer` sub-agent for comprehensive quality enforcement:
   - Handles systematic fix-test-verify cycles until all quality gates pass
   - Automatically runs lint, typecheck, and test verification 
