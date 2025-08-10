@@ -71,20 +71,32 @@ Execute the implementation plan methodically with continuous reasoning:
 - Add appropriate error handling and logging with thoughtful consideration
 - Integrate with existing systems carefully
 - Ensure code follows project patterns and conventions
-- Run `yarn nx lint <affected-projects>` after changes
-- Run `yarn nx typecheck <affected-projects>` to ensure type safety
-- Run `yarn nx test <affected-projects> --skip-nx-cache` to verify tests pass
+- Delegate to `iterative-quality-fixer` sub-agent for comprehensive quality enforcement:
+  - Handles systematic fix-test-verify cycles until all quality gates pass
+  - Automatically runs lint, typecheck, and test verification 
+  - Integrates with debugger agent for failure analysis and systematic resolution
+  - Continues iteration until success or maximum attempts reached
 
 ### 5. Quality Assurance
 **Apply critical reasoning and systematic analysis (ultrathink):**
-- Delegate to the `code-quality-reviewer` agent if available for objective review (use ultrathink for complex quality issues)
-- Use systematic reasoning (ultrathink) for self-review when needed:
-  - Think through each acceptance criterion systematically
-  - Reason about potential code quality issues and edge cases
-  - Analyze test coverage adequacy with step-by-step evaluation
-  - Think through error handling scenarios methodically
-  - Reason about security implications and potential vulnerabilities
-  - Consider accessibility compliance systematically where applicable
+- **Primary Quality Gates**: Delegate to `iterative-quality-fixer` sub-agent for comprehensive quality enforcement:
+  - Executes systematic fix-test-verify cycles for all quality gates
+  - Automatically handles test failures, linting errors, and type checking issues
+  - Integrates with debugger agent for root cause analysis when issues occur
+  - Continues iteration until all quality standards are met or maximum attempts reached
+  - Provides detailed reports of fixes applied and any remaining issues
+
+- **Secondary Review**: Delegate to `code-quality-reviewer` agent for production-readiness assessment:
+  - Objective analysis of code quality and maintainability
+  - Verification of adherence to project patterns and best practices
+  - Critical evaluation of edge cases and error handling
+  - Security and accessibility compliance review
+
+- **Manual Verification**: Use systematic reasoning (ultrathink) for final validation:
+  - Verify each acceptance criterion is fully satisfied
+  - Confirm integration with existing systems is seamless
+  - Validate that all automated fixes maintain intended functionality
+  - Review any issues flagged by quality agents that require manual intervention
 
 ### 6. Documentation and Cleanup
 - Update relevant documentation if needed
@@ -142,10 +154,24 @@ If errors occur at any step:
    - Suggestions for resolution
 
 ### Debugging Integration
-- Delegate to `debugger` agent when implementation hits unexpected errors (use ultrathink for complex debugging scenarios)
-- Apply systematic debugging approach for complex failures
-- Use debugging insights to refine implementation approach
-- Update implementation plan based on debugging discoveries
+- **Automated Quality Issues**: `iterative-quality-fixer` sub-agent automatically handles:
+  - Test failures through systematic debugging cycles
+  - Linting and type checking errors with iterative resolution
+  - Integration with debugger agent for root cause analysis
+  - Continuous fix-test-verify loops until resolution or maximum attempts
+
+- **Implementation Errors**: Delegate to `debugger` agent for systematic troubleshooting:
+  - Use ultrathink methodology for complex debugging scenarios
+  - Apply systematic debugging approach for unexpected failures
+  - Use debugging insights to refine implementation approach
+  - Update implementation plan based on debugging discoveries
+
+- **Iterative Fixing Patterns**: Follow established systematic approach:
+  - Capture exact error messages and failure context
+  - Delegate to appropriate specialized agents for analysis
+  - Apply evidence-based fixes from debugging recommendations
+  - Verify fixes through re-running quality gates
+  - Document iteration history and resolution approaches
 
 ## Report Format
 
