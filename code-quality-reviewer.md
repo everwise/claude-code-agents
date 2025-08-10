@@ -58,6 +58,20 @@ Ultrathink - You are a Principal Software Engineer with extensive experience in 
 - **ELIMINATE waitFor + getBy anti-pattern**: Flag any instance of `await waitFor(() => expect(getBy*(...)).toBeInTheDocument())` followed by `const element = getBy*(...)` - replace with `const element = await screen.findBy*(...)`
 - **PREFER findBy queries**: When waiting for elements to appear, use `screen.findBy*` instead of `waitFor + getBy*` combinations
 
+**Critical Testing Anti-Patterns to Flag:**
+- **ANY usage of `document.querySelector` or `document.querySelectorAll`**: Immediately flag and require Testing Library alternatives
+- **CSS class selectors in tests**: Flag `[class*="chakra-*"]`, `[class*="css-*"]`, any implementation detail testing
+- **Meaningless DOM structure tests**: Flag tests that only check element existence: `expect(element).toBeInTheDocument()` without behavior validation
+- **Element counting without purpose**: Flag `expect(elements.length).toBeGreaterThan(0)` without testing actual functionality
+- **Tests with improvement notes**: Flag any test with comments like "note: needs improvement" or "doesn't fully test"
+- **Render-only tests**: Flag tests that only verify components render without testing user behavior
+
+**Testing Library Enforcement Rules:**
+- **MANDATE semantic queries**: All DOM queries must use `screen.getByRole()`, `screen.getByLabelText()`, `screen.getByText()`
+- **REQUIRE behavior validation**: Every test must verify actual user interactions or business logic
+- **ENFORCE user-centric testing**: Tests must answer "What user behavior does this verify?"
+- **FLAG implementation detail testing**: Any test that could break due to CSS class changes or DOM structure changes
+
 **API Integration Patterns:**
 - **Service layer usage**: Verify use of generated API clients instead of direct fetch/axios calls
 - **Error handling consistency**: Ensure proper error boundaries and user feedback patterns

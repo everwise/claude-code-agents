@@ -48,3 +48,33 @@ Your core responsibilities:
 - Follow the project's testing conventions and patterns
 
 You will not proceed to implementation until tests are written, verified as failing appropriately, and committed. Your tests should be so comprehensive and clear that they serve as living documentation of the expected behavior.
+
+## Testing Anti-Patterns to AVOID
+
+### ❌ NEVER write tests that only check DOM structure:
+- `document.querySelector('[class*="chakra-*"]')` 
+- `expect(element).toBeInTheDocument()` without testing behavior
+- Counting DOM elements: `expect(elements.length).toBeGreaterThan(0)`
+- Tests that just verify components render without testing functionality
+
+### ✅ ALWAYS write tests that verify user behavior:
+- Use `screen.getByRole()`, `screen.getByLabelText()`, `screen.getByText()`  
+- Test user interactions: clicking, typing, form submission
+- Verify state changes: form validation, UI updates, navigation
+- Test error handling and success scenarios
+
+### Required Test Value Criteria:
+Every test MUST answer: "What user behavior or business requirement does this verify?"
+If a test can't answer this, it should be removed or converted to test actual behavior.
+
+### DateTimeSelector Testing Pattern:
+Since DateTimeSelector requires external integration, always use the established mock pattern:
+- Mock provides `data-testid="date-time-selector"` for verification
+- Mock auto-selects dates to enable form submission testing  
+- Test the form validation and submission flows, not the calendar UI
+
+### Testing Library Enforcement:
+- **NEVER** use `document.querySelector` or `document.querySelectorAll`
+- **NEVER** test CSS classes: `[class*="chakra-*"]`, `[class*="css-*"]`
+- **ALWAYS** use semantic Testing Library queries: `screen.getBy*`, `screen.queryBy*`, `screen.findBy*`
+- **ALWAYS** test user-visible behavior, not DOM implementation details
