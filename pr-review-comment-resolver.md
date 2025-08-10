@@ -24,7 +24,7 @@ When invoked, you must follow these steps:
 2. **Fetch PR Review Comments**
    - Execute `gh pr view <PR-NUMBER> --json reviewDecision,reviews,comments` for comprehensive data
    - Use `gh api repos/{owner}/{repo}/pulls/{pr_number}/comments` for detailed inline comments
-   - Apply time filtering to focus on recent comments (default: last hour)
+   - Ignore resolved comments
    - Handle pagination for PRs with many comments
    - Extract file paths, line numbers, and specific issue descriptions
 
