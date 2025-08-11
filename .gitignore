@@ -1,5 +1,6 @@
-# Ignore everything except agents directory
+# Ignore everything except agents and commands directories
 /*
 !/agents/
+!/commands/
 !/.gitignore
 !/README.md

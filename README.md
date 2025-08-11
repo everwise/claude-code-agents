@@ -1,6 +1,6 @@
-# Claude Code Agents
+# Claude Code Extensions
 
-Specialized agents for Claude Code that enhance development workflows through targeted expertise and orchestrated collaboration.
+Specialized agents and commands for Claude Code that enhance development workflows through targeted expertise, orchestrated collaboration, and custom utilities.
 
 ## Quick Start
 
@@ -12,8 +12,12 @@ cd claude-code-agents
 # Install agents in your Claude Code setup  
 ln -sf $(pwd)/agents ~/.claude/torch-agents
 
+# Install commands in your Claude Code setup
+ln -sf $(pwd)/commands ~/.claude/commands
+
 # Verify installation
 ls ~/.claude/torch-agents/
+ls ~/.claude/commands/
 ```
 
 ## Agent Architecture
@@ -33,6 +37,12 @@ The agents follow a hierarchical structure with orchestrational agents coordinat
     ├── tdd-test-writer → test-driven development
     └── 7 other specialized agents
 ```
+
+## Commands
+
+Custom Claude Code commands for streamlined workflows:
+
+- **pr-refresh-summary** → refresh PR summary to comprehensively reflect all current changes while preserving template structure
 
 ## Quick Reference
 
