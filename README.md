@@ -6,8 +6,8 @@ Specialized agents and commands for Claude Code that enhance development workflo
 
 ```bash
 # Clone the repository
-git clone https://github.com/everwise/claude-code-agents.git
-cd claude-code-agents
+git clone https://github.com/everwise/claude-code-extensions.git
+cd claude-code-extensions
 
 # Install agents in your Claude Code setup  
 ln -sf $(pwd)/agents ~/.claude/torch-agents
