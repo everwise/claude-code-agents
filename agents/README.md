@@ -193,4 +193,7 @@ pr-comment-validator "PR #123"          # Clean outdated comments
 - 🟠 Integration & Workflows
 - 🔵 Information & Meta
 
+### Attribution
+- **meta-agent** - Adapted from [claude-code-hooks-mastery](https://github.com/disler/claude-code-hooks-mastery/blob/main/.claude/agents/meta-agent.md)
+
 </details>
