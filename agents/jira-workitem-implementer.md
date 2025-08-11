@@ -102,6 +102,11 @@ Execute the implementation plan methodically with continuous reasoning:
 ### 6. Documentation and Cleanup
 - Update relevant documentation if needed
 - Add inline comments for complex logic
+- Delegate to `code-comment-reviewer` agent for comprehensive comment quality analysis:
+  - Reviews all comment quality and accuracy in modified files
+  - Detects hamburger comments and outdated documentation
+  - Verifies comment relevance during code changes and refactoring
+  - Ensures comments explain "why" rather than "what"
 - Ensure commit messages follow conventional format
 - Clean up any debugging code or console logs
 
