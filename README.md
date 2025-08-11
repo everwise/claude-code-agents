@@ -1,85 +1,54 @@
 # Claude Code Agents
 
-A collection of specialized agents for Claude Code with hierarchical orchestration patterns. Orchestrational agents coordinate complex workflows by delegating to specialized agents.
+Specialized agents for Claude Code that enhance development workflows through targeted expertise and orchestrated collaboration.
 
-## Installation
+## Quick Start
 
 ```bash
-# Clone repository to a projects directory
-git clone https://github.com/everwise/claude-code-agents.git ~/Code/claude-code-agents
-
-# Create agents directory if it doesn't exist
+# Install agents in your Claude Code setup  
 mkdir -p ~/.claude/agents
-
-# Symlink as a subdirectory under your agents directory
-ln -s ~/Code/claude-code-agents/agents ~/.claude/agents/torch-agents
+ln -sf $(pwd)/agents/*.md ~/.claude/agents/
 
 # Verify installation
-ls -la ~/.claude/agents/torch-agents/
+ls ~/.claude/agents/
 ```
 
-This allows you to:
-- Keep torch agents alongside your personal agents
-- Easily update with `git pull` from the cloned repo
-- Maintain multiple agent collections from different sources
+## Agent Architecture
 
-## Agent Hierarchy
+The agents follow a hierarchical structure with orchestrational agents coordinating specialized capabilities:
 
 ```
-meta-agent (creates new agents)
-│
 ├── ORCHESTRATIONAL AGENTS (workflow coordinators)
-│   ├── feature-architect (3-phase development)
-│   ├── jira-workitem-implementer (ticket → PR)  
-│   ├── pr-review-comment-resolver (PR feedback)
-│   └── iterative-quality-fixer (quality enforcement)
+│   ├── feature-architect → 3-phase development planning
+│   ├── jira-workitem-implementer → ticket to PR automation  
+│   ├── pr-review-comment-resolver → systematic PR feedback
+│   └── iterative-quality-fixer → quality gate enforcement
 │
-└── SPECIALIZED AGENTS (focused capabilities)
-    ├── debugger (troubleshooting)
-    ├── code-quality-reviewer (production readiness)
-    ├── code-comment-reviewer (comment quality)
-    ├── tdd-test-writer (test-driven development)
-    ├── jira-workitem-analyzer (ticket analysis)
-    └── pr-comment-validator (comment relevance)
+└── SPECIALIZED AGENTS (focused expertise)
+    ├── debugger → error troubleshooting
+    ├── code-quality-reviewer → production readiness
+    ├── tdd-test-writer → test-driven development
+    └── 7 other specialized agents
 ```
 
-## When to Use Which Agent
+## Quick Reference
 
-### For Complex Development Tasks
-- **`feature-architect`** → New features, complex bugs, architectural changes
-- **`jira-workitem-implementer`** → Complete Jira ticket implementation (APL-1234)
-- **`iterative-quality-fixer`** → Fix failing tests, lint errors, type issues
+### Complex Development
+- **New features/bugs**: `feature-architect`
+- **Jira tickets**: `jira-workitem-implementer` 
+- **Quality issues**: `iterative-quality-fixer`
 
-### For Code Quality & Review
-- **`pr-review-comment-resolver`** → Address multiple PR review comments  
-- **`code-quality-reviewer`** → Production-readiness assessment
-- **`code-comment-reviewer`** → Comment quality and hamburger detection
-- **`pr-comment-validator`** → Check comment relevance after changes
+### Code Review & Quality
+- **PR feedback**: `pr-review-comment-resolver`
+- **Code review**: `code-quality-reviewer`
+- **Test creation**: `tdd-test-writer`
 
-### For Development Practices
-- **`tdd-test-writer`** → Test-driven development workflow
-- **`debugger`** → Systematic error troubleshooting  
-- **`jira-workitem-analyzer`** → Parse ticket requirements
-
-### For Agent Management
-- **`meta-agent`** → Create new Claude Code agents
-
-## Key Delegation Patterns
-
-**`jira-workitem-implementer`** orchestrates:
-- `jira-workitem-analyzer` → ticket analysis
-- `feature-architect` → complex planning  
-- `tdd-test-writer` → test creation
-- `iterative-quality-fixer` → quality enforcement
-- `debugger` + `code-quality-reviewer` → issue resolution
-
-**`iterative-quality-fixer`** leverages:
-- `debugger` → failure analysis
-- `code-quality-reviewer` → quality assessment  
-
-**`pr-review-comment-resolver`** uses:
-- `iterative-quality-fixer` → systematic comment resolution
+### Troubleshooting
+- **Errors/failures**: `debugger`
+- **Comment cleanup**: `pr-comment-validator`
 
 ## Documentation
 
-See individual agent specifications in `agents/` directory for detailed capabilities and usage instructions.
+📖 **[Complete documentation and usage guidelines →](agents/README.md)**
+
+Individual agent specifications are in the `agents/` directory.
