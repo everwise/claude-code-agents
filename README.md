@@ -2,6 +2,27 @@
 
 A collection of specialized agents for Claude Code with hierarchical orchestration patterns. Orchestrational agents coordinate complex workflows by delegating to specialized agents.
 
+## Installation
+
+```bash
+# Clone repository to a projects directory
+git clone https://github.com/everwise/claude-code-agents.git ~/Code/claude-code-agents
+
+# Create agents directory if it doesn't exist
+mkdir -p ~/.claude/agents
+
+# Symlink as a subdirectory under your agents directory
+ln -s ~/Code/claude-code-agents/agents ~/.claude/agents/torch-agents
+
+# Verify installation
+ls -la ~/.claude/agents/torch-agents/
+```
+
+This allows you to:
+- Keep torch agents alongside your personal agents
+- Easily update with `git pull` from the cloned repo
+- Maintain multiple agent collections from different sources
+
 ## Agent Hierarchy
 
 ```
