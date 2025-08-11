@@ -5,12 +5,15 @@ Specialized agents for Claude Code that enhance development workflows through ta
 ## Quick Start
 
 ```bash
+# Clone the repository
+git clone https://github.com/everwise/claude-code-agents.git
+cd claude-code-agents
+
 # Install agents in your Claude Code setup  
-mkdir -p ~/.claude/agents
-ln -sf $(pwd)/agents/*.md ~/.claude/agents/
+ln -sf $(pwd)/agents ~/.claude/torch-agents
 
 # Verify installation
-ls ~/.claude/agents/
+ls ~/.claude/torch-agents/
 ```
 
 ## Agent Architecture
