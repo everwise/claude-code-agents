@@ -9,15 +9,16 @@ Specialized agents and commands for Claude Code that enhance development workflo
 git clone https://github.com/everwise/claude-code-extensions.git
 cd claude-code-extensions
 
-# Install agents in your Claude Code setup  
-ln -sf $(pwd)/agents ~/.claude/torch-agents
+# Create Claude Code directories
+mkdir -p ~/.claude/{agents,commands}
 
-# Install commands in your Claude Code setup
-ln -sf $(pwd)/commands ~/.claude/commands
+# Install agents and commands
+ln -sf $(pwd)/agents ~/.claude/agents/torch
+ln -sf $(pwd)/commands ~/.claude/commands/torch
 
 # Verify installation
-ls ~/.claude/torch-agents/
-ls ~/.claude/commands/
+ls ~/.claude/agents/torch/
+ls ~/.claude/commands/torch/
 ```
 
 ## Agent Architecture

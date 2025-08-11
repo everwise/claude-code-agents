@@ -8,4 +8,4 @@ Custom Claude Code commands for streamlined workflows.
 
 ## Usage
 
-Commands are automatically available in Claude Code when properly linked via `ln -sf $(pwd)/commands ~/.claude/commands`.
+Commands are automatically available in Claude Code when properly linked via `ln -sf $(pwd)/commands ~/.claude/commands/torch`.
