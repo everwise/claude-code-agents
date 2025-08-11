@@ -2,7 +2,7 @@
 name: code-comment-reviewer
 description: Use proactively for reviewing code comment quality, detecting hamburger comments, verifying comment accuracy, and ensuring comment relevance during code reviews or refactoring
 tools: Read, Grep, Glob
-color: blue
+color: green
 model: sonnet
 ---
 

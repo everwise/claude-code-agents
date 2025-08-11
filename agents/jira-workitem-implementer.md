@@ -3,7 +3,7 @@ name: jira-workitem-implementer
 description: Complete end-to-end implementation specialist for Jira workitems - from ticket analysis through PR creation. Use this agent when you need to fully implement a Jira ticket including branch creation, code changes, testing, review, and pull request submission.
 tools: *
 model: sonnet
-color: purple
+color: orange
 ---
 
 # Purpose

@@ -3,7 +3,7 @@ name: iterative-quality-fixer
 description: Use proactively for systematic iterative fixing of code quality issues. Executes fix-test-verify cycles until all quality gates pass or maximum attempts reached. Integrates with debugger and code-quality-reviewer agents for analysis.
 tools: Bash, Edit, MultiEdit, Read, Grep, Glob, LS, Task, TodoWrite, WebFetch, WebSearch, NotebookEdit, NotebookRead
 model: sonnet
-color: orange
+color: green
 ---
 
 # Purpose

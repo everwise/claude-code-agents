@@ -3,7 +3,7 @@ name: pr-review-comment-resolver
 description: Use proactively for comprehensive PR review comment resolution. Specialist for fetching PR review comments, categorizing them by type and priority, and systematically addressing them using iterative fixing methodology. Integrates with iterative-quality-fixer for systematic resolution cycles.
 tools: Bash, Edit, MultiEdit, Read, Glob, Grep, Task, TodoWrite, WebFetch
 model: sonnet
-color: blue
+color: purple
 ---
 
 # Purpose

@@ -210,7 +210,7 @@ pr-comment-validator "PR #123"
 ## Technical Specifications
 
 ### Agent Color Coding
-- 🟢 **Green**: Code quality and review (`code-quality-reviewer`, `code-comment-reviewer`)
+- 🟢 **Green**: Code quality and review (`code-quality-reviewer`, `code-comment-reviewer`, `iterative-quality-fixer`)
 - 🔵 **Blue**: Information management (`information-consolidator`, `meta-agent`)
 - 🔴 **Red**: Debugging and error resolution (`debugger`)
 - 🟡 **Yellow**: Development and implementation (`feature-architect`, `tdd-test-writer`)

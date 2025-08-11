@@ -3,7 +3,7 @@ name: jira-workitem-analyzer
 description: Use proactively for analyzing Jira workitems to extract, consolidate, and structure all implementation requirements and context. Specialist for parsing ticket details, identifying technical requirements, and producing development-ready summaries.
 tools: Bash, Read, Write, Grep, Glob
 model: sonnet
-color: blue
+color: orange
 ---
 
 # Purpose
