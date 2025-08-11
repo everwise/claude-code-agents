@@ -2,8 +2,19 @@
 
 Specialized agents and commands for Claude Code that enhance development workflows through targeted expertise, orchestrated collaboration, and custom utilities.
 
-## Quick Start
+## Prerequisites
 
+### Required
+- Claude Code CLI
+
+### Optional (by feature)
+- **[acli](https://developer.atlassian.com/cloud/acli/guides/install-acli/)** - for Jira workflows (`jira-workitem-implementer`, `jira-workitem-analyzer`)
+- **[gh CLI](https://cli.github.com/)** - for GitHub operations (PR creation, issue management)
+- **[Firecrawl API key](https://firecrawl.dev)** - for web scraping (`meta-agent`)
+
+## Installation
+
+### 1. Install Extensions
 ```bash
 # Clone the repository
 git clone https://github.com/everwise/claude-code-extensions.git
@@ -19,6 +30,13 @@ ln -sf $(pwd)/commands ~/.claude/commands/torch
 # Verify installation
 ls ~/.claude/agents/torch/
 ls ~/.claude/commands/torch/
+```
+
+### 2. Setup Optional Dependencies
+
+**For Firecrawl (meta-agent)**
+```bash
+claude mcp add firecrawl -e FIRECRAWL_API_KEY=fc-<YOUR_KEY> -- npx -y firecrawl-mcp
 ```
 
 ## Agent Architecture
