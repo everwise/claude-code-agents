@@ -1,0 +1,1 @@
+Use the GitHub CLI to comment "@gemini-code-assist review" on the current PR
