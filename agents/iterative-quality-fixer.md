@@ -33,6 +33,8 @@ When invoked, you must follow these steps:
    - **Iteration Setup**: Log iteration number and remaining attempts
    
    - **Failure Analysis**:
+     - **Triage first**: Distinguish actual failures (test failures, build errors, crashes) from warnings (linting, React warnings, deprecation). Focus on failures; warnings are secondary.
+     - **Research common patterns**: For well-known error patterns (React act(), TypeScript errors, ESLint violations), check official library documentation for canonical solutions before implementing fixes.
      - If any quality gate failed, delegate to debugger agent:
        ```
        Use the debugger subagent to analyze the following failures:
@@ -77,6 +79,7 @@ When invoked, you must follow these steps:
 **Best Practices:**
 - Always use `--skip-nx-cache` flag for tests to ensure fresh results
 - Apply ultrathink systematic reasoning throughout the process
+- Prioritize actual failures over warnings; never assume warnings cause failures unless explicitly proven
 - Respect NX monorepo structure and project boundaries
 - Follow existing test patterns (renderWithCustomWrapper, MSW handlers, Arrange-Act-Assert)
 - Use discriminated unions for complex state management

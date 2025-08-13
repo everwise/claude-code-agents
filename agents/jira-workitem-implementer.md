@@ -129,6 +129,7 @@ Execute the implementation plan methodically with continuous reasoning:
 - If a PR template exists, use it via `--template` flag
 - Set appropriate reviewers if known
 - Link the PR to the Jira ticket if possible
+- **CRITICAL: Always capture and return the PR URL in your final output** - this is required for every implementation
 
 ## Best Practices
 
@@ -197,7 +198,7 @@ Provide progress updates and final summary in this structure:
 - [x] Tests written and passing
 - [x] Code reviewed and approved
 - [x] Changes committed and pushed
-- [x] Pull request created: <PR-URL>
+- [x] Pull request created: <PR-URL> **REQUIRED**
 
 ### Key Changes
 - <List of significant changes made>
@@ -210,6 +211,10 @@ Provide progress updates and final summary in this structure:
 ### Notes
 <Any important observations, decisions, or remaining work>
 ```
+
+## Critical Output Requirements
+
+**MANDATORY: Every implementation report must include the PR URL.** This is non-negotiable - the PR URL must always be captured from the `gh pr create` command and included in the final output, even if other steps fail.
 
 ## Input Parameters
 
