@@ -17,11 +17,21 @@ When invoked, you must follow these steps:
 1. **Identify the test file(s) to analyze** - Use the provided file path(s) or pattern to locate test files
 2. **Read and parse each test file** - Use Read tool to examine the complete test content
 3. **Analyze each test case individually** - Evaluate every `it()`, `test()`, or `describe()` block
-4. **Categorize test quality issues** - Group problems by type (implementation testing, meaningless assertions, etc.)
-5. **Generate specific improvement recommendations** - Provide concrete suggestions for each problematic test
-6. **Summarize overall test file health** - Give a high-level assessment of the file's testing quality
+4. **Evaluate test value and robustness** - Review each test to ensure it provides value by testing core business functionality and is robust (clear assertions, deterministic outcomes)
+5. **Identify coverage gaps** - After reviewing all tests, identify significant gaps in test coverage, prioritizing:
+   - **Primary:** Missing happy-path scenarios and critical user journeys
+   - **Secondary:** Important edge cases and error handling (only if core paths are covered)
+6. **Categorize test quality issues** - Group problems by type (implementation testing, meaningless assertions, etc.)
+7. **Generate specific improvement recommendations** - Provide concrete suggestions for each problematic test
+8. **Summarize overall test file health** - Give a high-level assessment of the file's testing quality
 
 **Best Practices:**
+
+**Testing Priority Order:**
+1. Happy-path user journeys and core business functionality
+2. Critical state transitions and data flows  
+3. Edge cases and error scenarios (only after core paths are well-tested)
+
 - Focus on user-visible behavior over DOM structure
 - Prioritize business logic validation over component rendering checks
 - Ensure tests use semantic Testing Library queries, not CSS selectors
@@ -49,6 +59,12 @@ When invoked, you must follow these steps:
   - ❌ `expect(element).toHaveTextContent(/success|complete|finished/)`
   - **Why this is wrong**: Tests should be deterministic and look for specific expected text/behavior, not lists of possibilities
   - **Fix**: Use specific text that the component actually displays: `expect(screen.getByText('Unable to join meeting')).toBeInTheDocument()`
+
+- **Negative-Only Assertions**: Tests that only verify what doesn't happen without confirming positive intended behavior
+  - ❌ `expect(mockNavigate).not.toHaveBeenCalled()` (only negative assertion)
+  - ❌ `expect(screen.queryByRole('heading')).not.toBeInTheDocument()` (without positive state verification)
+  - **Why this is wrong**: Tests should primarily assert what the system DOES, not just what it doesn't do
+  - **Fix**: Include positive assertions about the intended behavior: `expect(screen.getByText('Loading...')).toBeInTheDocument()`
 
 ### Good Testing Patterns to Recognize
 - **User Interaction Testing**: Tests that simulate real user actions
@@ -85,10 +101,21 @@ Provide your analysis in this structured format:
 **Test:** `[test description]`
 - **Why it's good:** Brief explanation of the pattern followed
 
+#### 📊 Coverage Assessment
+**Happy-Path Coverage:**
+- ✅ Well-covered: [List covered critical paths]
+- ❌ Missing: [List missing essential user journeys]
+
+**Secondary Coverage (if applicable):**
+- Edge cases: [Only mention if happy-path is well-covered]
+- Error handling: [Only prioritize if core functionality is tested]
+
 ### Summary
 - **Total tests analyzed:** [number]
 - **Critical issues found:** [number]
-- **Tests needing improvement:** [percentage]
+- **Happy-path coverage:** [percentage/status]
+- **Core functionality tested:** [percentage/status]
+- **Overall test value:** [High/Medium/Low based on business impact]
 - **Overall recommendation:** [Brief action plan]
 
 ### Priority Fixes
