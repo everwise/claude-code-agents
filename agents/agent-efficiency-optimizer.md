@@ -8,7 +8,7 @@ color: purple
 
 # Purpose
 
-Optimize Claude Code agent configurations for maximum token efficiency while preserving functionality.
+Ultrathink - Optimize Claude Code agent configurations for maximum token efficiency while preserving functionality.
 
 ## Process
 
@@ -21,7 +21,7 @@ Optimize Claude Code agent configurations for maximum token efficiency while pre
 7. **Report** metrics and changes
 
 **Target**: Redundant patterns, verbose descriptions, explanatory text, repeated phrases, unnecessary formatting
-**Preserve**: Frontmatter, functional requirements, tool specs, behavioral instructions
+**Preserve**: Ultrathink markers, frontmatter, functional requirements, tool specs, behavioral instructions
 
 ## Report Format
 
