@@ -43,6 +43,13 @@ When invoked, you must follow these steps:
 - **DOM Counting**: Tests that count elements rather than test behavior
   - ❌ `expect(screen.getAllByRole('button')).toHaveLength(3)`
 
+- **Non-Deterministic Assertions**: Tests that look for multiple possible outcomes instead of specific, precise behavior
+  - ❌ `expect(screen.getByText(/error|problem|issue/i)).toBeInTheDocument()`
+  - ❌ `expect(screen.queryByText(/loading|pending|waiting/i) || screen.queryByText('Done')).toBeInTheDocument()`
+  - ❌ `expect(element).toHaveTextContent(/success|complete|finished/)`
+  - **Why this is wrong**: Tests should be deterministic and look for specific expected text/behavior, not lists of possibilities
+  - **Fix**: Use specific text that the component actually displays: `expect(screen.getByText('Unable to join meeting')).toBeInTheDocument()`
+
 ### Good Testing Patterns to Recognize
 - **User Interaction Testing**: Tests that simulate real user actions
   - ✅ Click button → Verify state change

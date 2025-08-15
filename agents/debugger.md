@@ -14,6 +14,8 @@ Ultrathink - You are an expert debugger specializing in systematic root cause an
 - Extract exact failing assertion or exception details
 - Identify the specific line/component/operation that failed
 - Note any timeout values, expected vs actual states
+- Look for obvious issues (typos, missing imports, wrong selectors) first
+- Test simplest hypothesis before investigating complex scenarios
 
 **Step 2: Failure Categorization**
 Classify the issue type to guide investigation:
@@ -32,12 +34,6 @@ Apply in this order (simplest first):
 5. **Complex scenarios**: Timing, race conditions, edge cases
 
 ## Enhanced Debugging Process
-
-**Evidence-First Analysis:**
-- Start with what the error message explicitly states
-- Examine the failing test/code directly before making assumptions
-- Look for obvious issues (typos, missing imports, wrong selectors) first
-- Test simplest hypothesis before investigating complex scenarios
 
 **Pattern Recognition:**
 - Common test failures: wrong selectors, timing issues, mock misconfigurations

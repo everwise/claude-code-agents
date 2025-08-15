@@ -29,7 +29,6 @@ When invoked, you must follow these steps:
    - Extract file paths, line numbers, and specific issue descriptions
 
 3. **Parse and Categorize Comments**
-   **Apply systematic reasoning (ultrathink) for accurate categorization:**
    - Parse comment content to identify actionable items with step-by-step analysis
    - Reason through comment intent and technical implications
    - Categorize by type:
@@ -41,7 +40,6 @@ When invoked, you must follow these steps:
    - Extract specific file locations and line ranges
 
 4. **Prioritize by Severity**
-   **Use systematic reasoning (ultrathink) for priority assignment:**
    - Think through potential impact and urgency of each comment systematically
    - Reason about dependencies and cascading effects
    - Assign priority levels:
@@ -52,7 +50,6 @@ When invoked, you must follow these steps:
    - Sort resolution order by priority and dependency
 
 5. **Create Resolution Plan**
-   **Apply systematic reasoning (ultrathink) for comprehensive planning:**
    - Think step-by-step through optimal resolution order and approach
    - Reason through potential conflicts and integration challenges
    - Group related comments for batch fixing
